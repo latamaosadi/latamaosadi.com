@@ -70,9 +70,9 @@ async function particlesInit(engine: Engine) {
       </div>
       <TheCard data-aos="fade-up" data-aos-delay="400" class="max-w-lg">
         <p class="text-content2">
-          I'm a frontend developer specializing in building (and occasionally
-          designing) exceptional digital experiences. Currently, I'm focused on
-          building accessible, human-centered products at Brankas.
+          I’m a UX-oriented frontend developer specializing in building
+          high-quality digital products. Currently a part of amazing people
+          enabling exceptional digital financial experience at Brankas.
         </p>
       </TheCard>
     </TheSection>
@@ -82,22 +82,10 @@ async function particlesInit(engine: Engine) {
         <TheCard data-aos="fade-up" class="flex-1 max-w-none">
           <div class="text-content2 flex flex-col gap-4">
             <p>
-              Hello! My name is Robert and I enjoy creating things that live on
-              the internet. My interest in web development started back in 2012
-              when I decided to try editing custom Tumblr themes — turns out
-              hacking together a custom reblog button taught me a lot about HTML
-              & CSS!
-            </p>
-            <p>
-              Fast-forward to today, and I've had the privilege of working at an
-              advertising agency, a start-up, a huge corporation, and a
-              student-led design studio. My main focus these days is building
-              accessible, inclusive products and digital experiences at Brankas
-              for a variety of clients.
-            </p>
-            <p>
-              I also recently launched a course that covers everything you need
-              to build a web app with the Spotify API using Node & React.
+              Hi! My name is Robert, I love tinkering and creating stuff that
+              could be accessed publicly. I think the web is one of the best
+              invention ever created, we can easily share information, a lot of
+              digital solution emerges that increase our quality of life.
             </p>
             <p>Here are a few technologies I've been working with recently:</p>
             <ul class="grid lg:grid-cols-2 gap-2">
@@ -126,84 +114,33 @@ async function particlesInit(engine: Engine) {
       <SectionHeader>Experience</SectionHeader>
       <TheCard data-aos="fade-up" class="max-w-full">
         <div class="text-content2 flex flex-col gap-4">
-          <p>
-            Hello! My name is Robert and I enjoy creating things that live on
-            the internet. My interest in web development started back in 2012
-            when I decided to try editing custom Tumblr themes — turns out
-            hacking together a custom reblog button taught me a lot about HTML &
-            CSS!
-          </p>
-          <p>
-            Fast-forward to today, and I've had the privilege of working at an
-            advertising agency, a start-up, a huge corporation, and a
-            student-led design studio. My main focus these days is building
-            accessible, inclusive products and digital experiences at Brankas
-            for a variety of clients.
-          </p>
-          <p>
-            I also recently launched a course that covers everything you need to
-            build a web app with the Spotify API using Node & React.
-          </p>
           <p>Here are a few technologies I've been working with recently:</p>
         </div>
         <TimelineList class="mt-4">
           <TimelineItem>
             <template #title>Senior Front-end Developer at Brankas</template>
             <template #period>Januari 2021 - Present</template>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-            accusantium illum perferendis dolorem deserunt tempore suscipit amet
-            nam, officia numquam, similique temporibus corporis ea, atque dolor
-            autem. Similique, possimus magnam!
           </TimelineItem>
           <TimelineItem>
             <template #title>Senior Front-end Developer at Gotomalls</template>
             <template #period>June 2015 - December 2020</template>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-            accusantium illum perferendis dolorem deserunt tempore suscipit amet
-            nam, officia numquam, similique temporibus corporis ea, atque dolor
-            autem. Similique, possimus magnam!
           </TimelineItem>
         </TimelineList>
       </TheCard>
     </TheSection>
     <TheSection id="projects" class="gap-6">
       <SectionHeader>I Made These</SectionHeader>
-      <TheCard data-aos="fade-up" class="max-w-full">
+      <!-- <TheCard data-aos="fade-up" class="max-w-full">
         <div class="text-content2 flex flex-col gap-4">
-          <p>
-            Hello! My name is Robert and I enjoy creating things that live on
-            the internet. My interest in web development started back in 2012
-            when I decided to try editing custom Tumblr themes — turns out
-            hacking together a custom reblog button taught me a lot about HTML &
-            CSS!
-          </p>
-          <p>
-            Fast-forward to today, and I've had the privilege of working at an
-            advertising agency, a start-up, a huge corporation, and a
-            student-led design studio. My main focus these days is building
-            accessible, inclusive products and digital experiences at Brankas
-            for a variety of clients.
-          </p>
-          <p>
-            I also recently launched a course that covers everything you need to
-            build a web app with the Spotify API using Node & React.
-          </p>
-          <p>Here are a few technologies I've been working with recently:</p>
         </div>
-      </TheCard>
+      </TheCard> -->
       <PageSectionTheProjects />
     </TheSection>
     <TheSection id="contact" class="gap-6">
       <SectionHeader>Get In Touch</SectionHeader>
       <TheCard data-aos="fade-up" class="max-w-full">
         <div class="text-content2 flex flex-col gap-4">
-          <p>
-            Hello! My name is Robert and I enjoy creating things that live on
-            the internet. My interest in web development started back in 2012
-            when I decided to try editing custom Tumblr themes — turns out
-            hacking together a custom reblog button taught me a lot about HTML &
-            CSS!
-          </p>
+          <p>Got any question or fun project to work on? Let's have a chat!</p>
         </div>
       </TheCard>
       <div class="text-center">
