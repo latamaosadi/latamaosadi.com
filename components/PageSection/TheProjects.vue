@@ -27,7 +27,7 @@ const projects = data.value.items.map((item: any) => item.fields);
           provider="contentful"
           class="object-cover object-center"
           :src="project.cover.fields.file.url"
-          alt=""
+          :alt="project.title"
           loading="lazy"
         />
       </div>

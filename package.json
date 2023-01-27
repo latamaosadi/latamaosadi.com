@@ -24,6 +24,7 @@
     "contentful": "^10.0.0-beta-v10.8",
     "rippleui": "^1.5.0",
     "tsparticles": "^2.7.1",
+    "vue-gtag": "^2.0.1",
     "vue3-particles": "^2.7.1"
   }
 }
