@@ -8,9 +8,12 @@ import {
   EnvelopeIcon,
 } from "@heroicons/vue/24/solid";
 
-const theme = useTheme();
 const isScrolled = useState(() => false);
-const isDark = useIsDark();
+const isDark = useDark({
+  selector: "body",
+  attribute: "data-theme",
+});
+const toggleDark = useToggle(isDark);
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
@@ -19,9 +22,6 @@ onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
 });
 
-function toggleTheme() {
-  theme.value = isDark.value ? "light" : "dark";
-}
 function handleScroll() {
   isScrolled.value = window.scrollY > 96;
 }
@@ -73,14 +73,16 @@ function scrollToElement(id: string) {
             <EnvelopeIcon class="h-6" />
             Contact
           </NavItem>
-          <NavItem
-            class="dropdown-item flex flex-row gap-2"
-            @click="toggleTheme"
-          >
-            <SunIcon v-if="isDark" class="h-6 text-slate-1000" />
-            <MoonIcon v-else class="h-6 text-slate-1000" />
-            <span>{{ isDark ? "Light" : "Dark" }} Mode</span>
-          </NavItem>
+          <ClientOnly>
+            <NavItem
+              class="dropdown-item flex flex-row gap-2"
+              @click="toggleDark()"
+            >
+              <SunIcon v-if="isDark" class="h-6 text-slate-1000" />
+              <MoonIcon v-else class="h-6 text-slate-1000" />
+              <span>{{ isDark ? "Light" : "Dark" }} Mode</span>
+            </NavItem>
+          </ClientOnly>
         </SideNav>
 
         <div class="hidden md:flex md:items-center">
@@ -112,10 +114,12 @@ function scrollToElement(id: string) {
           >
             Contact
           </a>
-          <button class="navbar-item" @click="toggleTheme">
-            <SunIcon v-if="isDark" class="h-6 text-slate-1000" />
-            <MoonIcon v-else class="h-6 text-slate-1000" />
-          </button>
+          <ClientOnly>
+            <button class="navbar-item" @click="toggleDark()">
+              <SunIcon v-if="isDark" class="h-6 text-slate-1000" />
+              <MoonIcon v-else class="h-6 text-slate-1000" />
+            </button>
+          </ClientOnly>
         </div>
       </div>
     </div>

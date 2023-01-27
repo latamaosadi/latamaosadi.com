@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import AOS from "aos";
-const theme = useTheme();
 
 onMounted(() => {
   AOS.init({
@@ -11,7 +10,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div :data-theme="theme" class="min-h-screen">
+  <div class="min-h-screen overflow-x-hidden">
     <TheNavbar />
     <div class="max-w-6xl w-full mx-auto px-6 md:px-12">
       <slot />

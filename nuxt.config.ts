@@ -15,6 +15,7 @@ export default defineNuxtConfig({
   },
   modules: [
     "@nuxt/image-edge",
+    "@vueuse/nuxt",
     [
       "@nuxtjs/color-mode",
       {

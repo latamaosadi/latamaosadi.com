@@ -88,7 +88,7 @@ async function particlesInit(engine: Engine) {
               digital solution emerges that increase our quality of life.
             </p>
             <p>Here are a few technologies I've been working with recently:</p>
-            <ul class="grid lg:grid-cols-2 gap-2">
+            <ul class="grid lg:grid-cols-2 gap-2 text-sm">
               <ListItem>VueJS</ListItem>
               <ListItem>TailwindCSS</ListItem>
               <ListItem>ReactJS</ListItem>

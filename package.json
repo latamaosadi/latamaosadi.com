@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.13",
+    "@vueuse/nuxt": "^9.11.1",
     "aos": "^3.0.0-beta.6",
     "contentful": "^10.0.0-beta-v10.8",
     "rippleui": "^1.5.0",

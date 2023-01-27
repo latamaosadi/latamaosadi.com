@@ -33,14 +33,14 @@ module.exports = {
         themeName: "dark",
         colorScheme: "dark",
         colors: {
-          // backgroundPrimary: "#0C192E",
+          backgroundPrimary: "#0d0c1d",
         },
       },
       {
         themeName: "light",
         colorScheme: "light",
         colors: {
-          // backgroundPrimary: "#CCD6F6",
+          backgroundPrimary: "#f5f3f4",
         },
       },
     ],
