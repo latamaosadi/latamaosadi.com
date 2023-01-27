@@ -10,6 +10,7 @@ const year = computed(() => new Date().getFullYear());
         href="https://github.com/latamaosadi"
         target="_blank"
         rel="noreferrer"
+        aria-label="Github Profile"
       >
         <Icon icon="Github" />
       </a>
@@ -18,6 +19,7 @@ const year = computed(() => new Date().getFullYear());
         href="https://www.linkedin.com/in/latamaosadi"
         target="_blank"
         rel="noreferrer"
+        aria-label="LinkedIn Profile"
       >
         <Icon icon="LinkedIn" />
       </a>

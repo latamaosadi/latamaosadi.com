@@ -15,6 +15,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/image-edge",
     "@vueuse/nuxt",
+    "@kevinmarrec/nuxt-pwa",
     [
       "@nuxtjs/color-mode",
       {
@@ -36,6 +37,20 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  pwa: {
+    icon: {
+      source: "./assets/img/icon.png",
+    },
+    manifest: {
+      name: "Robert Latamaosadi - Personal Website",
+      short_name: "Robert Latamaosadi",
+      lang: "en",
+      description:
+        "UX-oriented frontend developer specializing in building high-quality digital products",
+      theme_color: "#0C192E",
+      background_color: "#0d0c1d",
+    },
+  },
   plugins: [
     {
       src: "~/plugins/vue3-particles.ts",

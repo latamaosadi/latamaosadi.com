@@ -54,7 +54,7 @@ const projects = data.value.items.map((item: any) => item.fields);
           class="flex justify-end md:group-even:justify-start"
         >
           <a :href="project.url" target="_blank" class="btn btn-ghost gap-2">
-            <span>Learn More</span>
+            <span>Project Link</span>
             <ArrowTopRightOnSquareIcon class="h-6" />
           </a>
         </div>

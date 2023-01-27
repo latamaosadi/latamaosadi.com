@@ -45,6 +45,7 @@ function scrollToElement(id: string) {
           class="navbar-item font-sans text-purple-1000 text-2xl p-1 border border-gray-900"
           @click.prevent="scrollToElement('cover')"
           href="#cover"
+          aria-label="Website Logo"
         >
           <Logo class="h-10 w-10" />
         </a>
@@ -77,6 +78,7 @@ function scrollToElement(id: string) {
             <NavItem
               class="dropdown-item flex flex-row gap-2"
               @click="toggleDark()"
+              href="#"
             >
               <SunIcon v-if="isDark" class="h-6 text-slate-1000" />
               <MoonIcon v-else class="h-6 text-slate-1000" />
@@ -115,7 +117,11 @@ function scrollToElement(id: string) {
             Contact
           </a>
           <ClientOnly>
-            <button class="navbar-item" @click="toggleDark()">
+            <button
+              class="navbar-item"
+              @click="toggleDark()"
+              aria-label="Toggle Color Scheme"
+            >
               <SunIcon v-if="isDark" class="h-6 text-slate-1000" />
               <MoonIcon v-else class="h-6 text-slate-1000" />
             </button>
