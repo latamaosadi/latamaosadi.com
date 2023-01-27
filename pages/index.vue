@@ -70,7 +70,7 @@ async function particlesInit(engine: Engine) {
       </div>
       <TheCard data-aos="fade-up" data-aos-delay="400" class="max-w-lg">
         <p class="text-content2">
-          I’m a UX-oriented frontend developer specializing in building
+          I'm a UX-oriented frontend developer specializing in building
           high-quality digital products. Currently a part of amazing people
           enabling exceptional digital financial experience at Brankas.
         </p>

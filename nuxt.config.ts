@@ -3,12 +3,11 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "Robert Latamaosadi",
-      viewport:
-        "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0",
       meta: [
         {
           name: "description",
-          content: "A Personal Portfolio",
+          content:
+            "I'm a UX-oriented frontend developer specializing in building high-quality digital products. Currently a part of amazing people enabling exceptional digital financial experience at Brankas.",
         },
       ],
     },
