@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     "@nuxt/image-edge",
     "@vueuse/nuxt",
     "@kevinmarrec/nuxt-pwa",
+    "nuxt-delay-hydration",
     [
       "@nuxtjs/color-mode",
       {
@@ -50,6 +51,11 @@ export default defineNuxtConfig({
       theme_color: "#0C192E",
       background_color: "#0d0c1d",
     },
+  },
+  delayHydration: {
+    // enables nuxt-delay-hydration in dev mode for testing
+    debug: process.env.NODE_ENV === "development",
+    mode: "init",
   },
   plugins: [
     {

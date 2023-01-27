@@ -10,7 +10,9 @@ const { data } = await useAsyncData("project", async (nuxtApp) => {
   });
   return projects;
 });
-const projects = data.value.items.map((item: any) => item.fields);
+const projects = computed(
+  () => data.value?.items.map((item: any) => item.fields) || []
+);
 </script>
 
 <template>

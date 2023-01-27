@@ -1,54 +1,5 @@
-<script setup lang="ts">
-import { loadFull } from "tsparticles";
-import { ParticlesComponent } from "vue3-particles";
-import { Engine } from "tsparticles-engine";
-
-const options = computed(() => ({
-  retina_detect: true,
-  fullScreen: {
-    enable: true,
-  },
-  particles: {
-    number: {
-      density: {
-        enable: false,
-      },
-      value: 80,
-    },
-    shape: {
-      type: "triangle",
-    },
-    color: {
-      value: "#8892B0",
-    },
-    links: {
-      color: "#8892B0",
-      enable: true,
-    },
-    line_linked: {
-      opacity: 0.3,
-    },
-    move: {
-      enable: true,
-      speed: 1,
-    },
-    opacity: {
-      value: 0.3,
-    },
-  },
-}));
-
-async function particlesInit(engine: Engine) {
-  await loadFull(engine);
-}
-</script>
-
 <template>
-  <ParticlesComponent
-    id="tsparticles"
-    :options="options"
-    :particles-init="particlesInit"
-  />
+  <LazyTheParticle />
   <div class="relative flex flex-col gap-16">
     <TheSection id="cover" class="gap-9">
       <div>
@@ -134,7 +85,7 @@ async function particlesInit(engine: Engine) {
         <div class="text-content2 flex flex-col gap-4">
         </div>
       </TheCard> -->
-      <PageSectionTheProjects />
+      <LazyPageSectionTheProjects />
     </TheSection>
     <TheSection id="contact" class="gap-6">
       <SectionHeader>Get In Touch</SectionHeader>

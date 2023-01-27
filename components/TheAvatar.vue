@@ -9,6 +9,8 @@
       src="/images/avatar.jpg"
       quality="80"
       alt="Robert Latamaosadi"
+      width="448"
+      height="448"
     />
   </div>
 </template>
