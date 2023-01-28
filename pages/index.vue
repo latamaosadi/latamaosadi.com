@@ -99,7 +99,7 @@
       <div class="text-center">
         <a
           href="mailto:robert.latamaosadi@gmail.com"
-          class="mx-auto max-w-xs inline-flex items-center gap-2 py-4 px-10 rounded bg-backgroundPrimary/40 text-brand-primary hover:bg-purple-200 transform active:scale-95 transition-all duration-200 group ring ring-brand-primary shadow-lg hover:shadow-xl backdrop-blur-sm"
+          class="mx-auto max-w-xs inline-flex items-center gap-2 py-4 px-10 rounded bg-backgroundPrimary/40 text-purple-1000 hover:bg-purple-200 transform active:scale-95 transition-all duration-200 group ring ring-purple-1000 shadow-lg hover:shadow-xl backdrop-blur-sm"
         >
           <span>Drop a Hello</span>
           <span>👋</span>
