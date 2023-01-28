@@ -31,6 +31,9 @@ const projects = computed(
           :src="project.cover.fields.file.url"
           :alt="project.title"
           loading="lazy"
+          format="webp"
+          width="600"
+          height="400"
         />
       </div>
       <div

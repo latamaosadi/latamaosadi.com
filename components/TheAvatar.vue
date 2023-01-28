@@ -11,6 +11,7 @@
       alt="Robert Latamaosadi"
       width="448"
       height="448"
+      format="webp"
     />
   </div>
 </template>
