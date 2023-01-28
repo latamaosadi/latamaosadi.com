@@ -9,8 +9,8 @@ export default defineNuxtPlugin((nuxtApp) => {
       : contentful.createClient;
 
   const client = createClientFunc({
-    space: config.public.CONTENTFUL_SPACE_ID,
-    accessToken: config.public.CONTENTFUL_ACCESS_TOKEN,
+    space: config.public.contentfulSpaceId,
+    accessToken: config.public.contentfulAccessToken,
   });
 
   return {

@@ -83,9 +83,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
-      CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
-      GTAG_ID: process.env.GTAG_ID,
+      contentfulSpaceId: process.env.CONTENTFUL_SPACE_ID,
+      contentfulAccessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      gtagId: process.env.GTAG_ID,
     },
   },
   image: {
