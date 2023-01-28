@@ -77,4 +77,11 @@ export default defineNuxtConfig({
   image: {
     contentful: {},
   },
+  webpack: {
+    optimization: {
+      splitChunks: {
+        maxSize: 15000,
+      },
+    },
+  },
 });
