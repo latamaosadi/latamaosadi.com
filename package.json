@@ -9,23 +9,23 @@
   },
   "devDependencies": {
     "@kevinmarrec/nuxt-pwa": "^0.15.0",
-    "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
+    "@nuxt/image-edge": "^1.0.0-27913696.5d122a3",
     "@nuxtjs/google-fonts": "^3.0.0-1",
     "@types/aos": "^3.0.4",
     "autoprefixer": "^10.4.13",
-    "nuxt": "3.0.0",
+    "nuxt": "^3.1.1",
     "nuxt-delay-hydration": "^1.1.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4"
   },
   "dependencies": {
-    "@heroicons/vue": "^2.0.13",
+    "@heroicons/vue": "^2.0.14",
     "@vueuse/nuxt": "^9.11.1",
     "aos": "^3.0.0-beta.6",
     "contentful": "^10.0.0-beta-v10.8",
-    "rippleui": "^1.5.0",
-    "tsparticles": "^2.7.1",
+    "rippleui": "^1.7.0",
+    "tsparticles": "^2.8.0",
     "vue-gtag": "^2.0.1",
-    "vue3-particles": "^2.7.1"
+    "vue3-particles": "^2.8.0"
   }
 }
