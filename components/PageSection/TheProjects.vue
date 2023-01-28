@@ -23,18 +23,20 @@ const projects = computed(
       :key="index"
     >
       <div
-        class="row-span-full md:col-span-8 md:group-even:col-end-13 md:group-odd:col-start-1 rounded-lg overflow-hidden"
+        class="row-span-full md:col-span-8 md:group-even:col-end-13 md:group-odd:col-start-1"
       >
-        <NuxtImg
-          provider="contentful"
-          class="object-cover object-center"
-          :src="project.cover.fields.file.url"
-          :alt="project.title"
-          loading="lazy"
-          format="webp"
-          width="600"
-          height="400"
-        />
+        <div class="relative rounded-lg overflow-hidden">
+          <NuxtImg
+            provider="contentful"
+            class="object-cover object-center w-full aspect-[3/2]"
+            :src="project.cover.fields.file.url"
+            :alt="project.title"
+            loading="lazy"
+            format="webp"
+            width="600"
+            height="400"
+          />
+        </div>
       </div>
       <div
         class="mt-4 md:mt-0 row-span-full md:col-span-5 md:group-even:col-start-1 md:group-odd:col-end-13 md:group-even:order-first self-center z-10 space-y-2"
