@@ -12,6 +12,8 @@ const isScrolled = useState(() => false);
 const isDark = useDark({
   selector: "body",
   attribute: "data-theme",
+  valueDark: "dark",
+  valueLight: "light",
 });
 const toggleDark = useToggle(isDark);
 
