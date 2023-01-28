@@ -18,12 +18,6 @@ export default defineNuxtConfig({
     "@kevinmarrec/nuxt-pwa",
     "nuxt-delay-hydration",
     [
-      "@nuxtjs/color-mode",
-      {
-        fallback: "dark",
-      },
-    ],
-    [
       "@nuxtjs/google-fonts",
       {
         preconnect: true,
