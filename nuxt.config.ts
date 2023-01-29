@@ -22,6 +22,8 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@kevinmarrec/nuxt-pwa",
     "nuxt-delay-hydration",
+    "nuxt-simple-sitemap",
+    "@nuxtjs/robots",
     [
       "@nuxtjs/google-fonts",
       {
@@ -80,6 +82,9 @@ export default defineNuxtConfig({
   },
   build: {
     transpile: ["@heroicons/vue", "vue3-particles"],
+  },
+  sitemap: {
+    hostname: "https://latamaosadi.com",
   },
   runtimeConfig: {
     public: {
