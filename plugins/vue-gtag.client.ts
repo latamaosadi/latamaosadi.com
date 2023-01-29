@@ -5,6 +5,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(
     VueGtag,
     {
+      deferScriptLoad: true,
       config: {
         id: config.public.gtagId,
       },
