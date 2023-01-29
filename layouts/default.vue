@@ -1,14 +1,3 @@
-<script setup lang="ts">
-import AOS from "aos";
-
-onMounted(() => {
-  AOS.init({
-    easing: "ease-in-out",
-    duration: 800,
-  });
-});
-</script>
-
 <template>
   <div class="min-h-screen overflow-x-hidden">
     <TheNavbar />

@@ -89,7 +89,9 @@
         <div class="text-content2 flex flex-col gap-4">
         </div>
       </TheCard> -->
-      <LazyPageSectionTheProjects />
+      <DelayHydration>
+        <LazyPageSectionTheProjects />
+      </DelayHydration>
     </TheSection>
     <TheSection id="contact" class="gap-6">
       <SectionHeader>Get In Touch</SectionHeader>
