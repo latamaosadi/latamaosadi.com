@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     "@nuxt/image-edge",
     "@vueuse/nuxt",
     "@kevinmarrec/nuxt-pwa",
-    "nuxt-delay-hydration",
+    // "nuxt-delay-hydration",
     "nuxt-simple-sitemap",
     "@nuxtjs/robots",
     [
@@ -62,11 +62,11 @@ export default defineNuxtConfig({
       twitterCard: "summary_large_image",
     },
   },
-  delayHydration: {
-    // enables nuxt-delay-hydration in dev mode for testing
-    debug: process.env.NODE_ENV === "development",
-    mode: "init",
-  },
+  // delayHydration: {
+  //   // enables nuxt-delay-hydration in dev mode for testing
+  //   debug: process.env.NODE_ENV === "development",
+  //   mode: "init",
+  // },
   plugins: [
     {
       src: "~/plugins/vue3-particles.ts",
