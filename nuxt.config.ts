@@ -53,7 +53,7 @@ export default defineNuxtConfig({
       background_color: "#0d0c1d",
     },
     meta: {
-      ogSiteName: "latamaosadi.vercel.app",
+      ogSiteName: "latamaosadi.com",
       ogTitle: "Robert Latamaosadi - Personal Website",
       ogDescription:
         "UX-oriented frontend developer specializing in building high-quality digital products",
@@ -65,7 +65,7 @@ export default defineNuxtConfig({
   delayHydration: {
     // enables nuxt-delay-hydration in dev mode for testing
     debug: process.env.NODE_ENV === "development",
-    mode: "manual",
+    mode: "mount",
   },
   plugins: [
     {

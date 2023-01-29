@@ -1,8 +1,6 @@
 <template>
   <ClientOnly>
-    <DelayHydration>
-      <LazyTheParticle />
-    </DelayHydration>
+    <LazyTheParticle />
   </ClientOnly>
   <div class="relative flex flex-col gap-16">
     <TheSection id="cover" class="gap-9">
@@ -89,9 +87,7 @@
         <div class="text-content2 flex flex-col gap-4">
         </div>
       </TheCard> -->
-      <DelayHydration>
-        <LazyPageSectionTheProjects />
-      </DelayHydration>
+      <LazyPageSectionTheProjects />
     </TheSection>
     <TheSection id="contact" class="gap-6">
       <SectionHeader>Get In Touch</SectionHeader>
