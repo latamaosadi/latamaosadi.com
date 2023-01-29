@@ -21,6 +21,10 @@ const projects = computed(
       class="md:grid md:grid-cols-12 relative group"
       v-for="(project, index) in projects"
       :key="index"
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }"
+      :delay="index * 200"
     >
       <div
         class="row-span-full md:col-span-8 md:group-even:col-end-13 md:group-odd:col-start-1"

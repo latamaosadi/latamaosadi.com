@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     "nuxt-delay-hydration",
     "nuxt-simple-sitemap",
     "@nuxtjs/robots",
+    "@vueuse/motion/nuxt",
     [
       "@nuxtjs/google-fonts",
       {
@@ -39,6 +40,28 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  motion: {
+    visible: {
+      transition: {
+        duration: 800,
+      },
+    },
+    directives: {
+      "fade-left": {
+        initial: {
+          opacity: 0,
+          x: 100,
+        },
+        visible: {
+          opacity: 1,
+          x: 0,
+          transition: {
+            duration: 800,
+          },
+        },
+      },
+    },
+  },
   pwa: {
     icon: {
       source: "./assets/img/icon.png",
