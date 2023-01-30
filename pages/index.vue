@@ -1,7 +1,7 @@
 <template>
-  <ClientOnly>
+  <!-- <ClientOnly>
     <LazyTheParticle />
-  </ClientOnly>
+  </ClientOnly> -->
   <div class="relative flex flex-col gap-16">
     <TheSection id="cover" class="gap-9">
       <div>

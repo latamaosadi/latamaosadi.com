@@ -91,10 +91,10 @@ export default defineNuxtConfig({
     mode: "mount",
   },
   plugins: [
-    {
-      src: "~/plugins/vue3-particles.ts",
-      ssr: false,
-    },
+    // {
+    //   src: "~/plugins/vue3-particles.ts",
+    //   ssr: false,
+    // },
   ],
   css: ["~/assets/css/main.css"],
   postcss: {
@@ -104,7 +104,10 @@ export default defineNuxtConfig({
     },
   },
   build: {
-    transpile: ["@heroicons/vue", "vue3-particles"],
+    transpile: [
+      "@heroicons/vue",
+      // "vue3-particles"
+    ],
   },
   sitemap: {
     hostname: "https://latamaosadi.com",
