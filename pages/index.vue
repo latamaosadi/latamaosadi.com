@@ -11,7 +11,7 @@
         <h1
           v-motion
           :initial="{ opacity: 0, x: 100 }"
-          :visible="{ opacity: 1, x: 0, transition: { duration: 800 } }"
+          :visible="{ opacity: 1, x: 0, transition: { duration: 400 } }"
           class="text-5xl lg:text-7xl font-bold text-purple-1100 font-sans"
         >
           Robert Latamaosadi.
@@ -19,7 +19,7 @@
         <h2
           v-motion
           :initial="{ opacity: 0, x: 100 }"
-          :visible="{ opacity: 1, x: 0, transition: { duration: 800 } }"
+          :visible="{ opacity: 1, x: 0, transition: { duration: 400 } }"
           :delay="400"
           class="text-5xl lg:text-7xl font-bold text-slate-1000 font-sans mt-4"
         >
@@ -29,7 +29,7 @@
       <TheCard
         v-motion
         :initial="{ opacity: 0, y: 100 }"
-        :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 400 } }"
         :delay="600"
         class="max-w-lg"
       >
@@ -46,7 +46,7 @@
         <TheCard
           v-motion
           :initial="{ opacity: 0, y: 100 }"
-          :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }"
+          :visible="{ opacity: 1, y: 0, transition: { duration: 400 } }"
           class="flex-1 max-w-none"
         >
           <div class="text-content2 flex flex-col gap-4">
@@ -69,9 +69,6 @@
         </TheCard>
         <div class="flex-1">
           <div class="group mx-auto relative max-w-sm lg:max-w-md">
-            <div
-              class="bg-slate-1000/40 absolute inset-0 mask mask-hexagon transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-300"
-            ></div>
             <div class="drop-shadow-md">
               <TheAvatar />
             </div>
@@ -84,7 +81,7 @@
       <TheCard
         v-motion
         :initial="{ opacity: 0, y: 100 }"
-        :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 400 } }"
         class="max-w-full"
       >
         <div class="text-content2 flex flex-col gap-4">
@@ -115,20 +112,23 @@
       <TheCard
         v-motion
         :initial="{ opacity: 0, y: 100 }"
-        :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 400 } }"
         class="max-w-full"
       >
         <div class="text-content2 flex flex-col gap-4">
           <p>Got any question or fun project to work on? Let's have a chat!</p>
         </div>
       </TheCard>
-      <div class="text-center">
+      <div class="mx-auto max-w-xs relative group">
+        <div
+          class="absolute -inset-0.5 bg-gradient-to-r from-pink-800 to-purple-800 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"
+        ></div>
         <a
           href="mailto:robert.latamaosadi@gmail.com"
-          class="mx-auto max-w-xs inline-flex items-center gap-2 py-4 px-10 rounded bg-backgroundPrimary/40 text-purple-1000 hover:bg-purple-200 transform active:scale-95 transition-all duration-200 group ring ring-purple-1000 shadow-lg hover:shadow-xl backdrop-blur-sm"
+          class="inline-flex items-center gap-2 py-4 px-10 rounded-lg bg-backgroundPrimary text-purple-1000 transform active:scale-95 transition-all duration-200 group-hover:text-slate-1100"
         >
-          <span>Drop a Hello</span>
           <span>👋</span>
+          <span>Drop a Hello</span>
         </a>
       </div>
     </TheSection>
