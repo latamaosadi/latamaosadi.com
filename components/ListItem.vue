@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ChevronRightIcon } from "@heroicons/vue/24/solid";
+import { ChevronRightIcon } from "@heroicons/vue/24/solid/esm";
 </script>
 <template>
   <li class="flex items-center gap-2 text-purple-1000 py-2 px-3">

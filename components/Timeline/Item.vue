@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { BriefcaseIcon } from "@heroicons/vue/24/solid";
+import { BriefcaseIcon } from "@heroicons/vue/24/solid/esm";
 </script>
 
 <template>

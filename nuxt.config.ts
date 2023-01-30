@@ -117,9 +117,9 @@ export default defineNuxtConfig({
     hostname: "https://latamaosadi.com",
   },
   runtimeConfig: {
+    contentfulSpaceId: process.env.CONTENTFUL_SPACE_ID,
+    contentfulAccessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     public: {
-      contentfulSpaceId: process.env.CONTENTFUL_SPACE_ID,
-      contentfulAccessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       gtagId: process.env.GTAG_ID,
     },
   },

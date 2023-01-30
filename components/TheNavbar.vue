@@ -6,7 +6,7 @@ import {
   BookmarkIcon,
   DocumentTextIcon,
   EnvelopeIcon,
-} from "@heroicons/vue/24/solid";
+} from "@heroicons/vue/24/solid/esm";
 
 const isScrolled = useState(() => false);
 const isDark = useDark({

@@ -1,18 +1,7 @@
 <script lang="ts" setup>
-import { ArrowTopRightOnSquareIcon } from "@heroicons/vue/24/solid";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/vue/24/solid/esm";
 
-const { data } = await useAsyncData("project", async (nuxtApp) => {
-  const { $contentfulClient } = nuxtApp as any;
-
-  const projects = await $contentfulClient.getEntries({
-    content_type: "project",
-    "metadata.tags.sys.id[in]": "featured",
-  });
-  return projects;
-});
-const projects = computed(
-  () => data.value?.items.map((item: any) => item.fields) || []
-);
+const { data: projects } = await useFetch("/api/projects");
 </script>
 
 <template>
@@ -31,7 +20,7 @@ const projects = computed(
           <NuxtImg
             provider="contentful"
             class="object-cover object-center w-full aspect-[3/2]"
-            :src="project.cover.fields.file.url"
+            :src="project.cover.url"
             :alt="project.title"
             loading="lazy"
             format="webp"

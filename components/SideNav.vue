@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Bars3Icon } from "@heroicons/vue/24/solid";
+import { Bars3Icon } from "@heroicons/vue/24/solid/esm";
 </script>
 <template>
   <div class="dropdown navbar-item">
