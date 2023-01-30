@@ -17,13 +17,11 @@ const projects = computed(
 
 <template>
   <div class="flex flex-col gap-20">
-    <div
+    <MotionFadeUp
+      as="div"
       class="md:grid md:grid-cols-12 relative group"
       v-for="(project, index) in projects"
       :key="index"
-      v-motion
-      :initial="{ opacity: 0, y: 100 }"
-      :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }"
       :delay="index * 200"
     >
       <div
@@ -70,6 +68,6 @@ const projects = computed(
           </a>
         </div>
       </div>
-    </div>
+    </MotionFadeUp>
   </div>
 </template>

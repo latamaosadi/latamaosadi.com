@@ -79,7 +79,7 @@ function scrollToElement(id: string) {
           <ClientOnly>
             <NavItem
               class="dropdown-item flex flex-row gap-2"
-              @click="toggleDark()"
+              @click.prevent="toggleDark()"
               href="#"
             >
               <SunIcon v-if="isDark" class="h-6 text-slate-1000" />

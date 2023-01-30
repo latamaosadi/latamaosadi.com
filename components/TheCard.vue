@@ -11,7 +11,8 @@ const props = withDefaults(
 </script>
 
 <template>
-  <div
+  <MotionFadeUp
+    as="div"
     :class="[
       'card',
       {
@@ -32,5 +33,5 @@ const props = withDefaults(
         <slot name="footer"></slot>
       </div>
     </div>
-  </div>
+  </MotionFadeUp>
 </template>

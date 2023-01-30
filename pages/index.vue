@@ -6,33 +6,23 @@
     <TheSection id="cover" class="gap-9">
       <div>
         <h6 class="text-purple-1000 font-mono mb-3 text-sm lg:text-base">
-          Hi there, I'm
+          Hi there, I&apos;m
         </h6>
-        <h1
-          v-motion
-          :initial="{ opacity: 0, x: 100 }"
-          :visible="{ opacity: 1, x: 0, transition: { duration: 400 } }"
+        <MotionFadeLeft
+          as="h1"
           class="text-5xl lg:text-7xl font-bold text-purple-1100 font-sans"
         >
           Robert Latamaosadi.
-        </h1>
-        <h2
-          v-motion
-          :initial="{ opacity: 0, x: 100 }"
-          :visible="{ opacity: 1, x: 0, transition: { duration: 400 } }"
+        </MotionFadeLeft>
+        <MotionFadeLeft
+          as="h2"
           :delay="400"
           class="text-5xl lg:text-7xl font-bold text-slate-1000 font-sans mt-4"
         >
           A designer and coder.
-        </h2>
+        </MotionFadeLeft>
       </div>
-      <TheCard
-        v-motion
-        :initial="{ opacity: 0, y: 100 }"
-        :visible="{ opacity: 1, y: 0, transition: { duration: 400 } }"
-        :delay="600"
-        class="max-w-lg"
-      >
+      <TheCard class="max-w-lg">
         <p class="text-content2">
           I'm a UX-oriented frontend developer specializing in building
           high-quality digital products. Currently a part of amazing people
@@ -43,12 +33,7 @@
     <TheSection id="about" class="gap-6">
       <SectionHeader>About Me</SectionHeader>
       <div class="lg:flex gap-3">
-        <TheCard
-          v-motion
-          :initial="{ opacity: 0, y: 100 }"
-          :visible="{ opacity: 1, y: 0, transition: { duration: 400 } }"
-          class="flex-1 max-w-none"
-        >
+        <TheCard class="flex-1 max-w-none">
           <div class="text-content2 flex flex-col gap-4">
             <p>
               Hi! My name is Robert, I love tinkering and creating stuff that
@@ -78,12 +63,7 @@
     </TheSection>
     <TheSection id="experience" class="lg:pl-24 gap-6">
       <SectionHeader>Experience</SectionHeader>
-      <TheCard
-        v-motion
-        :initial="{ opacity: 0, y: 100 }"
-        :visible="{ opacity: 1, y: 0, transition: { duration: 400 } }"
-        class="max-w-full"
-      >
+      <TheCard class="max-w-full">
         <div class="text-content2 flex flex-col gap-4">
           <p>Here are a few technologies I've been working with recently:</p>
         </div>
@@ -101,7 +81,7 @@
     </TheSection>
     <TheSection id="projects" class="gap-6">
       <SectionHeader>I Made These</SectionHeader>
-      <!-- <TheCard v-motion :initial="{opacity: 0, y: 100}" :visible="{opacity: 1, y: 0}" class="max-w-full">
+      <!-- <TheCard v-motion :initial="{opacity: 0, y: 100}" :enter="{opacity: 1, y: 0}" class="max-w-full">
         <div class="text-content2 flex flex-col gap-4">
         </div>
       </TheCard> -->
@@ -109,12 +89,7 @@
     </TheSection>
     <TheSection id="contact" class="gap-6">
       <SectionHeader>Get In Touch</SectionHeader>
-      <TheCard
-        v-motion
-        :initial="{ opacity: 0, y: 100 }"
-        :visible="{ opacity: 1, y: 0, transition: { duration: 400 } }"
-        class="max-w-full"
-      >
+      <TheCard class="max-w-full">
         <div class="text-content2 flex flex-col gap-4">
           <p>Got any question or fun project to work on? Let's have a chat!</p>
         </div>
