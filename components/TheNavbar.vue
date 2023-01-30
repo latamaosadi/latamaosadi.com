@@ -37,20 +37,21 @@ function scrollToElement(id: string) {
 <template>
   <div
     :class="[
-      'border-b bg-backgroundPrimary/70 navbar navbar-sticky navbar-glass shadow-none py-2 h-20',
-      isScrolled ? 'border-slate-700' : 'border-transparent',
+      'bg-backgroundPrimary/50 navbar navbar-sticky navbar-glass shadow-none py-2 h-16',
     ]"
   >
     <div class="mx-auto flex w-full max-w-7xl">
       <div class="navbar-start">
-        <a
-          class="navbar-item font-sans text-purple-1000 text-2xl p-1 border border-gray-900"
-          @click.prevent="scrollToElement('cover')"
-          href="#cover"
-          aria-label="Website Logo"
-        >
-          <Logo class="h-10 w-10" />
-        </a>
+        <div class="navbar-item">
+          <a
+            class="block rounded font-sans text-purple-1000 text-2xl p-1 border-2 border-slate-500"
+            @click.prevent="scrollToElement('cover')"
+            href="#cover"
+            aria-label="Website Logo"
+          >
+            <Logo class="h-8 w-8" />
+          </a>
+        </div>
       </div>
       <div class="navbar-end">
         <SideNav class="md:hidden">
@@ -77,7 +78,7 @@ function scrollToElement(id: string) {
             Contact
           </NavItem>
           <ClientOnly>
-            <NavItem
+            <button
               class="dropdown-item flex flex-row gap-2"
               @click.prevent="toggleDark()"
               href="#"
@@ -85,7 +86,7 @@ function scrollToElement(id: string) {
               <SunIcon v-if="isDark" class="h-6 text-slate-1000" />
               <MoonIcon v-else class="h-6 text-slate-1000" />
               <span>{{ isDark ? "Light" : "Dark" }} Mode</span>
-            </NavItem>
+            </button>
           </ClientOnly>
         </SideNav>
 
@@ -119,14 +120,22 @@ function scrollToElement(id: string) {
             Contact
           </a>
           <ClientOnly>
-            <button
-              class="navbar-item"
-              @click="toggleDark()"
-              aria-label="Toggle Color Scheme"
-            >
-              <SunIcon v-if="isDark" class="h-6 text-slate-1000" />
-              <MoonIcon v-else class="h-6 text-slate-1000" />
-            </button>
+            <div class="navbar-item">
+              <button
+                :class="[
+                  'btn rounded-md p-2 h-auto',
+                  {
+                    'bg-amber-400 text-black': isDark,
+                    'bg-indigo-400 text-white': !isDark,
+                  },
+                ]"
+                @click="toggleDark()"
+                aria-label="Toggle Color Scheme"
+              >
+                <SunIcon v-motion-roll-left v-if="isDark" class="h-5" />
+                <MoonIcon v-motion-roll-left v-else class="h-5" />
+              </button>
+            </div>
           </ClientOnly>
         </div>
       </div>

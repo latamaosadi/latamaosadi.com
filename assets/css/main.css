@@ -8,7 +8,7 @@
     font-family: "Roboto Condensed", system-ui, sans-serif;
   }
   body {
-    @apply text-lg lg:text-xl tracking-wider;
+    @apply text-lg lg:text-xl tracking-wider antialiased;
   }
 }
 

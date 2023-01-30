@@ -76,8 +76,8 @@ export default defineNuxtConfig({
       lang: "en",
       description:
         "UX-oriented frontend developer specializing in building high-quality digital products",
-      theme_color: "#0C192E",
-      background_color: "#0d0c1d",
+      theme_color: "#0d0c1d",
+      background_color: "#252422",
     },
     meta: {
       ogSiteName: "latamaosadi.com",

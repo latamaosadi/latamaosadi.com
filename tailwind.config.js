@@ -64,14 +64,16 @@ module.exports = {
         themeName: "dark",
         colorScheme: "dark",
         colors: {
-          backgroundPrimary: "#0d0c1d",
+          // backgroundPrimary: "#0d0c1d",
+          backgroundPrimary: "#252422",
         },
       },
       {
         themeName: "light",
         colorScheme: "light",
         colors: {
-          backgroundPrimary: "#f5f3f4",
+          // backgroundPrimary: "#f5f3f4",
+          backgroundPrimary: "#f0ebd8",
         },
       },
     ],
