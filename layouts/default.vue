@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen overflow-x-hidden">
     <TheNavbar />
-    <div class="max-w-6xl w-full mx-auto px-6 md:px-12">
+    <div class="max-w-4xl w-full mx-auto px-6 md:px-12">
       <slot />
     </div>
     <TheFooter class="mt-20" />

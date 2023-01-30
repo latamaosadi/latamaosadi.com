@@ -30,9 +30,16 @@
         </p>
       </TheCard>
     </TheSection>
-    <TheSection id="about" class="gap-6">
+    <TheSection id="about" class="gap-12">
       <SectionHeader>About Me</SectionHeader>
       <div class="lg:flex gap-3">
+        <div class="mx-auto w-40 md:w-60 md:order-last">
+          <div class="group relative w-full">
+            <div class="drop-shadow-md">
+              <TheAvatar />
+            </div>
+          </div>
+        </div>
         <TheCard class="flex-1 max-w-none">
           <div class="text-content2 flex flex-col gap-4">
             <p>
@@ -52,13 +59,6 @@
             </ul>
           </div>
         </TheCard>
-        <div class="flex-1">
-          <div class="group mx-auto relative max-w-sm lg:max-w-md">
-            <div class="drop-shadow-md">
-              <TheAvatar />
-            </div>
-          </div>
-        </div>
       </div>
     </TheSection>
     <TheSection id="experience" class="lg:pl-24 gap-6">

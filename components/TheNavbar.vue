@@ -6,10 +6,10 @@ import {
   BookmarkIcon,
   DocumentTextIcon,
   EnvelopeIcon,
-} from "@heroicons/vue/24/solid/esm";
+} from "@heroicons/vue/24/outline/esm";
 
 const isScrolled = useState(() => false);
-const isDark = useDark({
+const isDark = await useDark({
   selector: "body",
   attribute: "data-theme",
   valueDark: "dark",
@@ -40,20 +40,22 @@ function scrollToElement(id: string) {
       'bg-backgroundPrimary/50 navbar navbar-sticky navbar-glass shadow-none py-2 h-16',
     ]"
   >
-    <div class="mx-auto flex w-full max-w-7xl">
+    <div class="mx-auto flex w-full max-w-5xl">
       <div class="navbar-start">
         <div class="navbar-item">
-          <a
-            :class="[
-              'block rounded-md p-1 border-2 border-slate-500 text-shadow font-bold',
-              { 'bg-content2': !isDark },
-            ]"
-            @click.prevent="scrollToElement('cover')"
-            href="#cover"
-            aria-label="Website Logo"
-          >
-            <Logo class="h-8 w-8" />
-          </a>
+          <ClientOnly>
+            <a
+              :class="[
+                'block rounded-md p-1 border-2 border-slate-500 text-shadow font-bold',
+                { 'bg-content2': !isDark },
+              ]"
+              @click.prevent="scrollToElement('cover')"
+              href="#cover"
+              aria-label="Website Logo"
+            >
+              <Logo class="h-8 w-8" />
+            </a>
+          </ClientOnly>
         </div>
       </div>
       <div class="navbar-end">

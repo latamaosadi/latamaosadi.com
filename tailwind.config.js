@@ -26,7 +26,7 @@ module.exports = {
       },
       animation: {
         tilt: "tilt 10s infinite linear",
-        blob: "blob 3s infinite",
+        blob: "blob 7s infinite",
       },
       keyframes: {
         tilt: {

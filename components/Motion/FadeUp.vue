@@ -15,7 +15,7 @@ const enterOption = {
 </script>
 
 <template>
-  <component :is="as" v-motion :initial="initialOption" :visible="enterOption">
+  <component :is="as" v-motion :initial="initialOption" :enter="enterOption">
     <slot />
   </component>
 </template>

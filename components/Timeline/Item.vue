@@ -17,7 +17,7 @@ import { BriefcaseIcon } from "@heroicons/vue/24/solid/esm";
     </h3>
     <time
       v-if="$slots.period"
-      class="block mb-2 text-sm font-normal leading-none text-content3"
+      class="block mb-2 text-sm font-normal leading-none text-content2"
     >
       <slot name="period" />
     </time>
