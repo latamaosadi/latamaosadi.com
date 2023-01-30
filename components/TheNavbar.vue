@@ -44,7 +44,10 @@ function scrollToElement(id: string) {
       <div class="navbar-start">
         <div class="navbar-item">
           <a
-            class="block rounded font-sans text-purple-1000 text-2xl p-1 border-2 border-slate-500"
+            :class="[
+              'block rounded-md p-1 border-2 border-slate-500 text-shadow font-bold',
+              { 'bg-content2': !isDark },
+            ]"
             @click.prevent="scrollToElement('cover')"
             href="#cover"
             aria-label="Website Logo"
