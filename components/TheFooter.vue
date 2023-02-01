@@ -24,7 +24,7 @@ const year = computed(() => new Date().getFullYear());
         <Icon icon="LinkedIn" />
       </a>
     </div>
-    <p>Designed & Built by Robert Latamaosadi</p>
-    <p>&copy; Copyright {{ year }}</p>
+    <p class="text-content2">Designed & Built by Robert Latamaosadi</p>
+    <p class="text-content2 mt-1">&copy; Copyright {{ year }}</p>
   </footer>
 </template>

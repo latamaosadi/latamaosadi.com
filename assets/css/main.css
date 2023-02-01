@@ -6,9 +6,10 @@
   *,
   html {
     font-family: "Roboto Condensed", system-ui, sans-serif;
+    font-size: 16px;
   }
   body {
-    @apply text-lg lg:text-xl tracking-wider antialiased;
+    @apply tracking-wider antialiased;
   }
 }
 

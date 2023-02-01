@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const props = withDefaults(
+const prop = withDefaults(
   defineProps<{
     image?: string;
     glass?: boolean;
@@ -11,17 +11,17 @@ const props = withDefaults(
 </script>
 
 <template>
-  <MotionFadeUp
+  <MotionFade
     as="div"
     :class="[
       'card',
       {
-        'card-image-cover': !!props.image,
-        'backdrop-blur-sm bg-backgroundPrimary/40 shadow-none': !!props.glass,
+        'card-image-cover': !!prop.image,
+        'backdrop-blur-sm bg-backgroundPrimary/40 shadow-none': !!prop.glass,
       },
     ]"
   >
-    <img v-if="props.image" :src="props.image" alt="" />
+    <img v-if="prop.image" :src="prop.image" alt="" />
     <div class="card-body">
       <h2 v-if="$slots.header" class="card-header">
         <slot name="header"></slot>
@@ -33,5 +33,5 @@ const props = withDefaults(
         <slot name="footer"></slot>
       </div>
     </div>
-  </MotionFadeUp>
+  </MotionFade>
 </template>

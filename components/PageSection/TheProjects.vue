@@ -5,21 +5,33 @@ const { data: projects } = await useFetch("/api/projects");
 </script>
 
 <template>
-  <div class="flex flex-col gap-20">
-    <MotionFadeUp
+  <div class="grid grid-cols-2 gap-8">
+    <MotionFade
       as="div"
-      class="md:grid md:grid-cols-12 relative group"
+      class="relative group"
       v-for="(project, index) in projects"
       :key="index"
-      :delay="index * 200"
+      :delay="(index + 1) * 200"
     >
-      <div
-        class="row-span-full md:col-span-8 md:group-even:col-end-13 md:group-odd:col-start-1"
-      >
-        <div class="relative rounded-lg overflow-hidden">
+      <div class="">
+        <div class="relative rounded-xl overflow-hidden shadow-lg">
+          <!-- <div
+            class="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-backgroundPrimary"
+          ></div> -->
+          <!-- <div class="absolute bottom-0 inset-x-0">
+            <div class="flex flex-wrap gap-1 p-2">
+              <span
+                class="badge rounded shadow-md"
+                v-for="(tool, index) in project.tools"
+                :key="index"
+              >
+                {{ tool }}
+              </span>
+            </div>
+          </div> -->
           <NuxtImg
             provider="contentful"
-            class="object-cover object-center w-full aspect-[3/2]"
+            class="object-cover object-center w-full aspect-video"
             :src="project.cover.url"
             :alt="project.title"
             loading="lazy"
@@ -29,34 +41,20 @@ const { data: projects } = await useFetch("/api/projects");
           />
         </div>
       </div>
-      <div
-        class="mt-4 md:mt-0 row-span-full md:col-span-5 md:group-even:col-start-1 md:group-odd:col-end-13 md:group-even:order-first self-center z-10 space-y-2"
-      >
-        <h3 class="font-bold uppercase md:group-odd:text-right text-xl">
+      <div class="mt-4 space-y-2 text-center">
+        <h3 class="font-bold text-lg">
           {{ project.title }}
         </h3>
-        <div class="bg-gray-200/70 backdrop-blur-sm p-4 rounded-lg shadow">
+        <div class="">
           <p class="text-content2">{{ project.description }}</p>
-          <div class="flex flex-wrap gap-1 mt-4">
-            <span
-              class="badge badge-square"
-              v-for="(tool, index) in project.tools"
-              :key="index"
-            >
-              {{ tool }}
-            </span>
-          </div>
         </div>
-        <div
-          v-if="project.url"
-          class="flex justify-end md:group-even:justify-start"
-        >
+        <!-- <div v-if="project.url" class="flex justify-end">
           <a :href="project.url" target="_blank" class="btn btn-ghost gap-2">
             <span>Project Link</span>
             <ArrowTopRightOnSquareIcon class="h-6" />
           </a>
-        </div>
+        </div> -->
       </div>
-    </MotionFadeUp>
+    </MotionFade>
   </div>
 </template>

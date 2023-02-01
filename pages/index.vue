@@ -3,24 +3,26 @@
     <LazyTheParticle />
   </ClientOnly> -->
   <div class="relative flex flex-col gap-16">
-    <TheSection id="cover" class="gap-9">
+    <TheSection id="cover" class="gap-9 justify-center" fill-screen>
       <div>
         <h6 class="text-purple-1000 font-mono mb-3 text-sm lg:text-base">
           Hi there, I&apos;m
         </h6>
-        <MotionFadeLeft
+        <MotionFade
           as="h1"
+          direction="left"
           class="text-5xl lg:text-7xl font-bold text-purple-1100 font-sans"
         >
           Robert Latamaosadi.
-        </MotionFadeLeft>
-        <MotionFadeLeft
+        </MotionFade>
+        <MotionFade
           as="h2"
-          :delay="400"
+          :delay="300"
+          direction="left"
           class="text-5xl lg:text-7xl font-bold text-slate-1000 font-sans mt-4"
         >
           A designer and coder.
-        </MotionFadeLeft>
+        </MotionFade>
       </div>
       <TheCard class="max-w-lg">
         <p class="text-content2">
@@ -49,7 +51,7 @@
               digital solution emerges that increase our quality of life.
             </p>
             <p>Here are a few technologies I've been working with recently:</p>
-            <ul class="grid lg:grid-cols-2 gap-2 text-sm">
+            <ul class="grid lg:grid-cols-2 gap-2">
               <ListItem>VueJS</ListItem>
               <ListItem>TailwindCSS</ListItem>
               <ListItem>ReactJS</ListItem>
@@ -61,7 +63,7 @@
         </TheCard>
       </div>
     </TheSection>
-    <TheSection id="experience" class="lg:pl-24 gap-6">
+    <TheSection id="experience" class="gap-6">
       <SectionHeader>Experience</SectionHeader>
       <TheCard class="max-w-full">
         <div class="text-content2 flex flex-col gap-4">
@@ -87,7 +89,7 @@
       </TheCard> -->
       <LazyPageSectionTheProjects class="mt-6" />
     </TheSection>
-    <TheSection id="contact" class="gap-6">
+    <TheSection id="contact" class="gap-6" fill-screen>
       <SectionHeader>Get In Touch</SectionHeader>
       <TheCard class="max-w-full">
         <div class="text-content2 flex flex-col gap-4">
@@ -96,7 +98,7 @@
       </TheCard>
       <div class="mx-auto max-w-xs relative group">
         <div
-          class="absolute -inset-0.5 bg-gradient-to-r from-pink-800 to-purple-800 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"
+          class="absolute -inset-0.5 bg-gradient-to-r from-pink-700 to-purple-700 rounded-lg blur opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"
         ></div>
         <a
           href="mailto:robert.latamaosadi@gmail.com"
