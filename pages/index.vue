@@ -1,7 +1,4 @@
 <template>
-  <!-- <ClientOnly>
-    <LazyTheParticle />
-  </ClientOnly> -->
   <div class="relative flex flex-col gap-16">
     <TheSection id="cover" class="gap-9 justify-center" fill-screen>
       <div>

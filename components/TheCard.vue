@@ -22,7 +22,7 @@ const prop = withDefaults(
     ]"
   >
     <img v-if="prop.image" :src="prop.image" alt="" />
-    <div class="card-body">
+    <div class="card-body p-2">
       <h2 v-if="$slots.header" class="card-header">
         <slot name="header"></slot>
       </h2>

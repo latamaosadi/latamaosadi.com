@@ -5,7 +5,7 @@ const { data: projects } = await useFetch("/api/projects");
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-8">
+  <div class="grid md:grid-cols-2 gap-8">
     <MotionFade
       as="div"
       class="relative group"
