@@ -29,7 +29,6 @@ export default defineNuxtConfig({
     "nuxt-simple-sitemap",
     "@nuxtjs/robots",
     "@vueuse/motion/nuxt",
-    "nuxt-gtag",
     [
       "@nuxtjs/google-fonts",
       {
@@ -120,6 +119,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     contentfulSpaceId: process.env.CONTENTFUL_SPACE_ID,
     contentfulAccessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    public: {
+      gtagId: process.env.GTAG_ID,
+    }
   },
   image: {
     contentful: {},
