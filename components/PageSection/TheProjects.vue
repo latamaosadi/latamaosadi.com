@@ -15,10 +15,10 @@ const { data: projects } = await useFetch("/api/projects");
     >
       <div class="">
         <div class="relative rounded-xl overflow-hidden shadow-lg">
-          <!-- <div
+          <div
             class="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-backgroundPrimary"
-          ></div> -->
-          <!-- <div class="absolute bottom-0 inset-x-0">
+          ></div>
+          <div class="absolute bottom-0 inset-x-0">
             <div class="flex flex-wrap gap-1 p-2">
               <span
                 class="badge rounded shadow-md"
@@ -28,7 +28,7 @@ const { data: projects } = await useFetch("/api/projects");
                 {{ tool }}
               </span>
             </div>
-          </div> -->
+          </div>
           <NuxtImg
             provider="contentful"
             class="object-cover object-center w-full aspect-video"
@@ -41,19 +41,19 @@ const { data: projects } = await useFetch("/api/projects");
           />
         </div>
       </div>
-      <div class="mt-4 space-y-2 text-center">
+      <div class="mt-4 space-y-2">
         <h3 class="font-bold text-lg">
           {{ project.title }}
         </h3>
         <div class="">
           <p class="text-content2">{{ project.description }}</p>
         </div>
-        <!-- <div v-if="project.url" class="flex justify-end">
+        <div v-if="project.url" class="flex justify-end">
           <a :href="project.url" target="_blank" class="btn btn-ghost gap-2">
             <span>Project Link</span>
             <ArrowTopRightOnSquareIcon class="h-6" />
           </a>
-        </div> -->
+        </div>
       </div>
     </MotionFade>
   </div>

@@ -10,12 +10,12 @@ export default defineEventHandler(async () => {
 
   const data = await client.getEntries({
     content_type: "project",
-    "metadata.tags.sys.id[in]": "featured",
+    "metadata.tags.sys.id[in]": ["featured"],
   });
 
   return data.items.map((item) => ({
     title: item.fields.title,
-    cover: item.fields.cover.fields.file,
+    cover: (item.fields.cover as any).fields.file,
     description: item.fields.description,
     url: item.fields.url,
     tools: item.fields.tools,

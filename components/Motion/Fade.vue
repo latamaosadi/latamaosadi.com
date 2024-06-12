@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { MotionVariants } from "@vueuse/motion";
-
 type FadeDirectionTypes = "up" | "down" | "left" | "right";
 
 const prop = withDefaults(
@@ -25,7 +23,7 @@ const directions: Record<FadeDirectionTypes, any> = {
   right: { initial: { x: -100 }, enter: { x: 0 } },
 };
 
-const variants = computed((): MotionVariants => {
+const variants = computed(() => {
   return {
     initial: {
       opacity: 0,
