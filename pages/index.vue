@@ -2,13 +2,30 @@
   <div class="relative flex flex-col gap-16">
     <TheSection id="cover" class="gap-9 justify-center" fill-screen>
       <div>
-        <h6 class="text-purple-1000 font-mono mb-3 text-sm lg:text-base">Hi there, I&apos;m</h6>
-        <MotionFade as="h1" direction="left" class="text-5xl lg:text-7xl font-bold text-purple-1100 font-sans"> Robert Latamaosadi. </MotionFade>
-        <MotionFade as="h2" :delay="300" direction="left" class="text-5xl lg:text-7xl font-bold text-slate-1000 font-sans mt-4"> A designer and coder. </MotionFade>
+        <h6 class="text-purple-1000 font-mono mb-3 text-sm lg:text-base">
+          Hi there, I&apos;m
+        </h6>
+        <MotionFade
+          as="h1"
+          direction="left"
+          class="text-5xl lg:text-7xl font-bold text-purple-1100 font-sans"
+        >
+          Robert Latamaosadi.
+        </MotionFade>
+        <MotionFade
+          as="h2"
+          :delay="300"
+          direction="left"
+          class="text-5xl lg:text-7xl font-bold text-slate-1000 font-sans mt-4"
+        >
+          A designer and coder.
+        </MotionFade>
       </div>
       <TheCard class="max-w-lg">
         <p class="text-content2">
-          I'm a UX-oriented front-end developer specializing in building high-quality digital products. Currently a part of amazing people enabling exceptional digital financial experience at Brankas.
+          I'm a UX-oriented front-end developer specializing in building
+          high-quality digital products. Currently a part of amazing people
+          enabling exceptional digital financial experience at Brankas.
         </p>
       </TheCard>
     </TheSection>
@@ -25,8 +42,10 @@
         <TheCard class="flex-1 max-w-none">
           <div class="text-content2 flex flex-col gap-4">
             <p>
-              Hi! My name is Robert, I love tinkering and creating stuff that could be accessed publicly. I think the web is one of the best invention ever created, we can easily share information, a
-              lot of digital solution emerges that increase our quality of life.
+              Hi! My name is Robert, I love tinkering and creating stuff that
+              could be accessed publicly. I think the web is one of the best
+              invention ever created, we can easily share information, a lot of
+              digital solution emerges that increase our quality of life.
             </p>
             <p>Here are a few technologies I've been working with recently:</p>
             <ul class="grid lg:grid-cols-2 gap-2">
@@ -45,7 +64,7 @@
       <SectionHeader>Experience</SectionHeader>
       <TheCard class="max-w-full">
         <div class="text-content2 flex flex-col gap-4">
-          <p>Here are a few technologies I've been working with recently:</p>
+          <p></p>
         </div>
         <TimelineList class="mt-4">
           <TimelineItem>
