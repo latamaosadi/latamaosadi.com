@@ -1,0 +1,193 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import { projects } from "../data/projects";
+import avatar from "../assets/avatar.png";
+
+const nav = [
+  ["#work", "work"],
+  ["#about", "about"],
+  ["#log", "log"],
+  ["#mail", "mail"],
+];
+// avatar sharpens through these sizes on hover; 384 = 2x of the 192px box, so the last step is clear
+const depixSteps = [64, 96, 144, 384];
+const stack = ["Vue", "Nuxt", "React", "Next.js", "TypeScript", "Tailwind CSS"];
+const log = [
+  { hash: "b4a2e1f", period: "2021–now", role: "Senior Front-end Developer", company: "Brankas", head: true },
+  { hash: "9c07d3a", period: "2015–2020", role: "Senior Front-end Developer", company: "Gotomalls" },
+];
+const email = "robert.latamaosadi@gmail.com";
+---
+
+<Base>
+  <header class="mx-auto flex max-w-4xl items-center justify-between px-4 pt-6 sm:px-6">
+    <a href="#top" aria-label="Robert Latamaosadi, back to top">
+      <svg viewBox="0 0 320 320" class="h-9 w-9" aria-hidden="true">
+        <path d="M55.077 284.658V57.955h194.317v32.386h32.386V187.5h-64.773v32.386h32.387v32.386h32.386v32.386h-97.159v-32.386h-32.386v-32.386h-32.386v64.772zm64.772-97.158h64.772v-32.386h32.386V90.341h-97.158z" fill="var(--accent)"></path>
+        <path d="M42.081 271.657V44.954h194.317v32.386h32.386v97.159h-64.772v32.386h32.386v32.386h32.386v32.386h-97.158v-32.386h-32.387v-32.386h-32.386v64.772zm64.772-97.158h64.773v-32.387h32.386V77.34h-97.159z" fill="currentColor"></path>
+      </svg>
+    </a>
+    <nav aria-label="Main" class="flex items-center gap-1 text-sm">
+      {nav.map(([href, text]) => (
+        <a href={href} class="px-1.5 py-2 text-muted hover:text-accent sm:px-2.5">[{text}]</a>
+      ))}
+      <button id="theme" type="button" class="ml-1 px-1.5 py-2 text-muted hover:text-accent" aria-label="Toggle dark mode">
+        <svg viewBox="0 0 8 8" class="h-4 w-4" shape-rendering="crispEdges" fill="currentColor" aria-hidden="true">
+          <path d="M2 0h4v1H2zM1 1h3v1H1zM0 2h3v4H0zM1 6h3v1H1zM2 7h4v1H2z"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main" class="mx-auto max-w-4xl px-4 sm:px-6">
+    <section id="top" class="pt-14 pb-20 sm:pt-20" aria-label="Introduction">
+      <div class="pixel-box mx-1">
+        <div class="flex items-center justify-between border-b-4 border-line px-4 py-2 text-xs text-muted">
+          <span>robert@latamaosadi.com: ~</span>
+          <span aria-hidden="true" class="flex gap-2"><i class="block h-2.5 w-2.5 bg-line"></i><i class="block h-2.5 w-2.5 bg-line"></i><i class="block h-2.5 w-2.5 bg-accent"></i></span>
+        </div>
+        <div class="space-y-2 p-4 text-[15px] leading-relaxed sm:p-8 sm:text-base">
+          <p class="out" style="--d:.1s"><span class="text-prompt">$</span> <span class="cmd" style="--n:6">whoami</span></p>
+          <h1 class="out py-2 font-pixel text-2xl leading-snug text-balance text-accent sm:text-5xl sm:leading-tight" style="--d:.45s">Robert Latamaosadi</h1>
+
+          <p class="out pt-3" style="--d:.7s"><span class="text-prompt">$</span> <span class="cmd" style="--n:13">cat about.txt</span></p>
+          <p class="out max-w-[62ch]" style="--d:1.35s">
+            A designer and coder. UX-oriented front-end developer building high-quality digital
+            products. Currently enabling exceptional digital financial experiences at Brankas.
+          </p>
+
+          <p class="out pt-3" style="--d:1.5s"><span class="text-prompt">$</span> <span class="cmd" style="--n:12">ls projects/</span></p>
+          <ul class="out flex flex-wrap gap-x-6 gap-y-1" style="--d:2.1s">
+            {projects.map((p) => (
+              <li><a href={`#${p.id}`} class="text-accent underline-offset-4 hover:underline">{p.id}/</a></li>
+            ))}
+          </ul>
+
+          <p class="out cursor pt-3" style="--d:2.2s"><span class="text-prompt">$</span> </p>
+        </div>
+      </div>
+
+      <div class="mt-14 text-center">
+        <a href="#work" class="pixel-btn inline-block bg-accent px-6 py-4 font-pixel text-xs text-bg sm:text-sm">
+          <span class="blink" aria-hidden="true">▶</span> Press start
+        </a>
+      </div>
+    </section>
+
+    <section id="work" class="scroll-mt-8 pb-24" aria-labelledby="work-title">
+      <h2 id="work-title" class="font-pixel text-lg sm:text-xl"><span class="text-muted">~/</span>projects</h2>
+      <p class="mt-3 text-muted">Things I've built and shipped. Pick one to play.</p>
+      <ul class="mt-10 space-y-14">
+        {projects.map((p) => (
+          <li id={p.id} class="scroll-mt-8">
+            <a href={p.url} target="_blank" rel="noopener" class="group grid gap-6 md:grid-cols-[1.2fr_1fr] md:items-center md:gap-10">
+              <div class="pixel-box relative mx-1 overflow-hidden">
+                <Image
+                  src={p.cover}
+                  alt={`Screenshot of ${p.title}`}
+                  widths={[480, 800, 1200]}
+                  sizes="(min-width: 768px) 480px, 100vw"
+                  class="aspect-video w-full object-cover object-top opacity-90 transition-opacity group-hover:opacity-100"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <h3 class="flex items-baseline gap-3 font-pixel text-sm leading-relaxed sm:text-base">
+                  <span class="text-accent opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" aria-hidden="true">▶</span>
+                  <span class="-ml-6 transition-[margin] group-hover:ml-0 group-hover:text-accent group-focus-visible:ml-0">{p.title}</span>
+                </h3>
+                <p class="mt-4 leading-relaxed text-muted">{p.description}</p>
+                <ul class="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-sm text-prompt" aria-label="Built with">
+                  {p.tools.map((t) => <li>[{t}]</li>)}
+                </ul>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section id="about" class="scroll-mt-8 pb-24" aria-labelledby="about-title">
+      <h2 id="about-title" class="font-pixel text-lg sm:text-xl"><span class="text-muted">~/</span>about</h2>
+      <div class="mt-10 grid items-start gap-10 md:grid-cols-[auto_1fr]">
+        <figure class="pixel-box mx-1 w-fit p-3">
+          <div class="depix relative h-48 w-48 bg-line">
+            <Image
+              src={avatar}
+              alt="Portrait of Robert Latamaosadi"
+              width={40}
+              height={40}
+              class="h-full w-full object-cover object-top [image-rendering:pixelated]"
+            />
+            {depixSteps.map((size, i) => (
+              <Image
+                src={avatar}
+                alt=""
+                width={size}
+                height={size}
+                loading="lazy"
+                style={`--in:${i * 90}ms;--out:${(depixSteps.length - 1 - i) * 90}ms`}
+                class={`absolute inset-0 h-full w-full object-cover object-top ${size < 192 ? "[image-rendering:pixelated]" : ""}`}
+              />
+            ))}
+          </div>
+          <figcaption class="mt-3 text-center font-pixel text-[10px] text-muted">Player 1</figcaption>
+        </figure>
+        <div class="max-w-[62ch] space-y-5 leading-relaxed">
+          <p>
+            Hi! I'm Robert. I love tinkering and making things anyone can use. The web is one of the
+            best inventions ever: information is easy to share, and digital products keep making
+            everyday life better. I like being part of that.
+          </p>
+          <p class="text-muted">Equipped lately:</p>
+          <ul class="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3">
+            {stack.map((s) => <li><span class="text-prompt" aria-hidden="true">+ </span>{s}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="log" class="scroll-mt-8 pb-24" aria-labelledby="log-title">
+      <h2 id="log-title" class="font-pixel text-lg sm:text-xl"><span class="text-muted">~/</span>experience</h2>
+      <div class="pixel-box mx-1 mt-10 overflow-x-auto p-4 text-sm sm:p-6 sm:text-base">
+        <p><span class="text-prompt">$</span> git log --oneline career</p>
+        <ol class="mt-3 space-y-2">
+          {log.map((e) => (
+            <li class="flex flex-col sm:flex-row sm:gap-3">
+              <span><span class="text-accent">{e.hash}</span>{e.head && <span class="text-prompt"> (HEAD)</span>}</span>
+              <span><span class="text-muted">{e.period}</span> {e.role} @ {e.company}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section id="mail" class="scroll-mt-8 pb-28" aria-labelledby="mail-title">
+      <h2 id="mail-title" class="font-pixel text-lg sm:text-xl"><span class="text-muted">~/</span>contact</h2>
+      <p class="mt-6 max-w-[62ch] leading-relaxed">Got a question or a fun project to work on? Let's chat.</p>
+      <div class="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+        <a href={`mailto:${email}`} class="pixel-btn mx-1 inline-block bg-accent px-6 py-4 font-pixel text-xs text-bg sm:text-sm">Send mail</a>
+        <span class="text-sm break-all text-muted">{email}</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mx-auto flex max-w-4xl flex-col gap-3 border-t-4 border-line px-4 py-8 text-sm text-muted sm:flex-row sm:justify-between sm:px-6">
+    <p>© {new Date().getFullYear()} Robert Latamaosadi. Designed &amp; built by me.</p>
+    <p class="flex gap-4">
+      <a href="https://github.com/latamaosadi" rel="me noopener" target="_blank" class="hover:text-accent">[github]</a>
+      <a href="https://www.linkedin.com/in/latamaosadi" rel="me noopener" target="_blank" class="hover:text-accent">[linkedin]</a>
+    </p>
+  </footer>
+
+  <script is:inline>
+    document.getElementById("theme").addEventListener("click", () => {
+      const t = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = t;
+      try {
+        localStorage.setItem("theme", t);
+      } catch {}
+    });
+  </script>
+</Base>

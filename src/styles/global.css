@@ -1,0 +1,174 @@
+@import "tailwindcss";
+@import "@fontsource/press-start-2p/latin-400.css";
+@import "@fontsource/ibm-plex-mono/latin-400.css";
+
+/* CRT: indigo glass, lavender phosphor (from the logo colours) */
+:root,
+:root[data-theme="dark"] {
+  --bg: #17122a;
+  --surface: #211a3a;
+  --text: #dcd6f7;
+  --muted: #a39bc8;
+  --line: #3e3466;
+  --accent: #cf81ff;
+  --prompt: #7ee0c8;
+  --scan: rgb(0 0 0 / 0.18);
+  color-scheme: dark;
+}
+/* LCD: pale lilac handheld screen */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #e9e4f5;
+    --surface: #f6f3fc;
+    --text: #231c3b;
+    --muted: #544b74;
+    --line: #c2b8dd;
+    --accent: #7a36b0;
+    --prompt: #0d6f5c;
+    --scan: rgb(60 40 120 / 0.05);
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #e9e4f5;
+  --surface: #f6f3fc;
+  --text: #231c3b;
+  --muted: #544b74;
+  --line: #c2b8dd;
+  --accent: #7a36b0;
+  --prompt: #0d6f5c;
+  --scan: rgb(60 40 120 / 0.05);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-prompt: var(--prompt);
+  --font-pixel: "Press Start 2P", ui-monospace, monospace;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+/* scanlines over everything; purely visual */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  background: repeating-linear-gradient(transparent 0 2px, var(--scan) 2px 3px);
+}
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* 8-bit box: border drawn with shadows so the corners stay notched */
+.pixel-box {
+  background: var(--surface);
+  box-shadow:
+    0 -4px 0 0 var(--line),
+    0 4px 0 0 var(--line),
+    -4px 0 0 0 var(--line),
+    4px 0 0 0 var(--line);
+}
+.pixel-btn {
+  box-shadow:
+    0 -4px 0 0 var(--text),
+    0 4px 0 0 var(--text),
+    -4px 0 0 0 var(--text),
+    4px 0 0 0 var(--text),
+    inset -4px -4px 0 0 rgb(0 0 0 / 0.25);
+}
+.pixel-btn:active {
+  box-shadow:
+    0 -4px 0 0 var(--text),
+    0 4px 0 0 var(--text),
+    -4px 0 0 0 var(--text),
+    4px 0 0 0 var(--text),
+    inset 4px 4px 0 0 rgb(0 0 0 / 0.25);
+}
+
+/* terminal boot sequence: commands type out, outputs pop in after */
+.cmd {
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: hidden;
+  white-space: nowrap;
+  width: calc(var(--n) * 1ch);
+}
+.cursor::after {
+  content: "";
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  vertical-align: text-bottom;
+  background: var(--prompt);
+  animation: blink 1s steps(1) infinite;
+}
+.blink {
+  animation: blink 1.2s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cmd {
+    animation: type calc(var(--n) * 45ms) steps(var(--n)) var(--d) both;
+  }
+  .out {
+    animation: show 0s var(--d) both;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .cursor::after,
+  .blink {
+    animation: none;
+  }
+}
+@keyframes type {
+  from {
+    width: 0;
+  }
+}
+@keyframes show {
+  from {
+    visibility: hidden;
+  }
+}
+
+/* avatar: stacked layers of rising resolution, revealed one by one on hover */
+.depix img + img {
+  opacity: 0;
+  transition: opacity 0s var(--out);
+}
+.depix:hover img + img {
+  opacity: 1;
+  transition-delay: var(--in);
+}
+@media (prefers-reduced-motion: reduce) {
+  .depix img + img {
+    transition-delay: 0s !important;
+  }
+}
