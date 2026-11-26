@@ -12,10 +12,23 @@ const nav = [
 ];
 // avatar sharpens through these sizes on hover; 384 = 2x of the 192px box, so the last step is clear
 const depixSteps = [64, 96, 144, 384];
-const stack = ["Vue", "Nuxt", "React", "Next.js", "TypeScript", "Tailwind CSS"];
+const stack = ["Vue", "Nuxt", "TypeScript", "Tailwind CSS", "Vite", "React", "Next.js", "Astro"];
+const years = new Date().getFullYear() - 2015;
 const log = [
-  { hash: "b4a2e1f", period: "2021–now", role: "Senior Front-end Developer", company: "Brankas", head: true },
-  { hash: "9c07d3a", period: "2015–2020", role: "Senior Front-end Developer", company: "Gotomalls" },
+  {
+    hash: "b4a2e1f",
+    period: "2021–now",
+    role: "Senior Front-end Developer",
+    company: "Brankas",
+    head: true,
+    notes: [
+      "Built and maintain the internal Vue 3 component library (with theme and icon packages) used across Brankas projects",
+      "Front-end developer on both product and client project teams",
+      "Take part in deciding UI/UX direction for new work",
+      "Coordinate with backend engineers on API contracts to deliver requirements end to end",
+    ],
+  },
+  { hash: "9c07d3a", period: "2015–2020", role: "Senior Front-end Developer", company: "Gotomalls", notes: [] },
 ];
 const email = "robert.latamaosadi@gmail.com";
 ---
@@ -53,8 +66,9 @@ const email = "robert.latamaosadi@gmail.com";
 
           <p class="out pt-3" style="--d:.7s"><span class="text-prompt">$</span> <span class="cmd" style="--n:13">cat about.txt</span></p>
           <p class="out max-w-[62ch]" style="--d:1.35s">
-            A designer and coder. UX-oriented front-end developer building high-quality digital
-            products. Currently enabling exceptional digital financial experiences at Brankas.
+            Front-end developer with {years} years of shipping web apps. I care about the details
+            people feel: speed, motion, and interfaces that just work. At Brankas I build the internal
+            component library our teams ship with.
           </p>
 
           <p class="out pt-3" style="--d:1.5s"><span class="text-prompt">$</span> <span class="cmd" style="--n:12">ls projects/</span></p>
@@ -80,9 +94,8 @@ const email = "robert.latamaosadi@gmail.com";
       <p class="mt-3 text-muted">Things I've built and shipped. Pick one to play.</p>
       <ul class="mt-10 space-y-14">
         {projects.map((p) => (
-          <li id={p.id} class="scroll-mt-8">
-            <a href={p.url} target="_blank" rel="noopener" class="group grid gap-6 md:grid-cols-[1.2fr_1fr] md:items-center md:gap-10">
-              <div class="pixel-box relative mx-1 overflow-hidden">
+          <li id={p.id} class="group grid scroll-mt-8 gap-6 md:grid-cols-[1.2fr_1fr] md:items-center md:gap-10">
+              <a href={p.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" class="pixel-box relative mx-1 block overflow-hidden">
                 <Image
                   src={p.cover}
                   alt={`Screenshot of ${p.title}`}
@@ -91,18 +104,22 @@ const email = "robert.latamaosadi@gmail.com";
                   class="aspect-video w-full object-cover object-top opacity-90 transition-opacity group-hover:opacity-100"
                   loading="lazy"
                 />
-              </div>
+              </a>
               <div>
                 <h3 class="flex items-baseline gap-3 font-pixel text-sm leading-relaxed sm:text-base">
-                  <span class="text-accent opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" aria-hidden="true">▶</span>
-                  <span class="-ml-6 transition-[margin] group-hover:ml-0 group-hover:text-accent group-focus-visible:ml-0">{p.title}</span>
+                  <span class="text-accent opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100" aria-hidden="true">▶</span>
+                  <a href={p.url} target="_blank" rel="noopener" class="-ml-6 transition-[margin] group-focus-within:ml-0 group-hover:ml-0 group-hover:text-accent">{p.title}</a>
                 </h3>
                 <p class="mt-4 leading-relaxed text-muted">{p.description}</p>
                 <ul class="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-sm text-prompt" aria-label="Built with">
                   {p.tools.map((t) => <li>[{t}]</li>)}
                 </ul>
+                {p.source && (
+                  <a href={p.source} target="_blank" rel="noopener" class="mt-3 inline-block text-sm text-muted underline underline-offset-4 hover:text-accent">
+                    View source on GitHub
+                  </a>
+                )}
               </div>
-            </a>
           </li>
         ))}
       </ul>
@@ -136,9 +153,14 @@ const email = "robert.latamaosadi@gmail.com";
         </figure>
         <div class="max-w-[62ch] space-y-5 leading-relaxed">
           <p>
-            Hi! I'm Robert. I love tinkering and making things anyone can use. The web is one of the
-            best inventions ever: information is easy to share, and digital products keep making
-            everyday life better. I like being part of that.
+            Hi! I'm Robert. I like small, polished things. I've built two clock projects because
+            getting a second hand to tick smoothly is my idea of fun.
+          </p>
+          <p>
+            Most of my work sits where design meets engineering: turning designs into reusable
+            components, weighing in on UI/UX decisions, and working out API contracts with backend so
+            features ship complete. Outside work I build tools for things I enjoy, like
+            Poképedia.
           </p>
           <p class="text-muted">Equipped lately:</p>
           <ul class="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3">
@@ -154,9 +176,16 @@ const email = "robert.latamaosadi@gmail.com";
         <p><span class="text-prompt">$</span> git log --oneline career</p>
         <ol class="mt-3 space-y-2">
           {log.map((e) => (
-            <li class="flex flex-col sm:flex-row sm:gap-3">
-              <span><span class="text-accent">{e.hash}</span>{e.head && <span class="text-prompt"> (HEAD)</span>}</span>
-              <span><span class="text-muted">{e.period}</span> {e.role} @ {e.company}</span>
+            <li>
+              <p class="flex flex-col sm:flex-row sm:gap-3">
+                <span><span class="text-accent">{e.hash}</span>{e.head && <span class="text-prompt"> (HEAD)</span>}</span>
+                <span><span class="text-muted">{e.period}</span> {e.role} @ {e.company}</span>
+              </p>
+              {e.notes.length > 0 && (
+                <ul class="mt-2 mb-4 space-y-1 text-muted">
+                  {e.notes.map((n) => <li class="flex gap-2 sm:pl-[10ch]"><span aria-hidden="true">-</span><span>{n}</span></li>)}
+                </ul>
+              )}
             </li>
           ))}
         </ol>
@@ -170,6 +199,12 @@ const email = "robert.latamaosadi@gmail.com";
         <a href={`mailto:${email}`} class="pixel-btn mx-1 inline-block bg-accent px-6 py-4 font-pixel text-xs text-bg sm:text-sm">Send mail</a>
         <span class="text-sm break-all text-muted">{email}</span>
       </div>
+      <p class="mt-8 text-sm text-muted">
+        Or find me on{" "}
+        <a href="https://github.com/latamaosadi" rel="me noopener" target="_blank" class="text-text underline underline-offset-4 hover:text-accent">GitHub</a>{" "}
+        and{" "}
+        <a href="https://www.linkedin.com/in/latamaosadi" rel="me noopener" target="_blank" class="text-text underline underline-offset-4 hover:text-accent">LinkedIn</a>.
+      </p>
     </section>
   </main>
 
